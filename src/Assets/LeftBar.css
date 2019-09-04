@@ -1,0 +1,22 @@
+.leftBar{
+    width: 5%;
+    height: 500px;
+padding-top: 40px
+}
+.iconSendok{
+    width: 40%;
+    padding: 20px
+}
+.iconList{
+    width: 40%;
+    padding: 20px
+}
+.iconAdd{
+    width: 40%;
+    padding: 20px;
+}
+.logout{
+    width: 40%;
+    padding: 20px;
+    padding-top: 220px
+}

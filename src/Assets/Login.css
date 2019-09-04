@@ -1,0 +1,91 @@
+.bodyLogin{
+    /* margin: 0;
+    padding: 0;
+    background: url('https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567570645/img/pic1_tnhdys.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    background-color: red; */
+    background-image: url('https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567572013/img/kopi_rqg46v.jpg');
+    width: 100%;
+    height: 600px;
+}
+
+.loginbox{
+    width: 280px;
+    height: 350px;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.avatar{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 40px);
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.loginbox p{
+    margin: 5px;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.loginbox a:hover
+{
+    color: #ffc107;
+}
