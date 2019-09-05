@@ -8,11 +8,11 @@ import '../Assets/History.css'
 class History extends Component {
     render() {
         return (
-            <div class='container'>
+            <div className='container'>
                 <HeaderHistory />
-                <div class='content'>
+                <div className='content'>
                     <LeftBar />
-                    <div class='menuItems'>
+                    <div className='menuItems'>
                         <HistoryList />
                     </div>
                 </div>

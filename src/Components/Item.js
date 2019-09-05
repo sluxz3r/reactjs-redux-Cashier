@@ -3,18 +3,18 @@ import '../Assets/Item.css';
 
 class Login extends Component {
     render() {
-        const menu = this.props.item        
+        const menu = this.props.item;
         return (
-            <div class='menuItem'>
-                <div class='cardContainer'>
+            <div className='menuItem'>
+                <div className='cardContainer'>
                     {menu &&
                         menu.length > 0 &&
                         menu.map((data, index) => {
                             return (
-                                <div key={index} class='card' onClick={this.props.sumCart}>
-                                    <img class='foto' src={data.image} />
-                                    <p class='nameKopi'>{data.name}</p>
-                                    <p class='hargaKopi'>Rp.{data.price}</p>
+                                <div key={index} className='card' onClick={(val) => this.props.sumCart(data)}>
+                                    <img className='foto' src={data.image} />
+                                    <p className='nameKopi'>{data.name}</p>
+                                    <p className='hargaKopi'>Rp.{data.price}</p>
                                 </div>
                             )
                         })}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../Assets/LeftBar.css';
 import swal from 'sweetalert';
+import ModalAdd from '../Components/ModalAdd';
 
 class LeftBar extends Component {
     render() {
@@ -18,16 +19,16 @@ class LeftBar extends Component {
             })
         };
         return (
-            <div class='leftBar'>
+            <div className='leftBar'>
                 <a href="/">
-                    <img class='iconSendok' src='https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567579575/img/fork_eixcjp.png' />
+                    <img className='iconSendok' src='https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567579575/img/fork_eixcjp.png' />
                 </a>
                 <a href="/history">
-                    <img class='iconList' src='https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567579578/img/clipboard_tq1syf.png' />
+                    <img className='iconList' src='https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567579578/img/clipboard_tq1syf.png' />
                 </a>
-                <img class='iconAdd' src='https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567579659/img/add_1_kfwkxt.png' />
+                <ModalAdd />
                 <a onClick={del.bind(this)}>
-                    <img class='logout' src='https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567582291/img/logoutt_qqf1er.png' />
+                    <img className='logout' src='https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567582291/img/logoutt_qqf1er.png' />
                 </a>
             </div>
         );

@@ -55,10 +55,10 @@ class Login extends Component {
             })
         };
         return (
-            <div class='bodyLogin'>
+            <div className='bodyLogin'>
                 {localStorage.jwtToken != undefined ? <Redirect to='/' /> :
-                <div class="loginbox">
-                    <img src="https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567570643/img/avatar_ynz0bv.png" class="avatar" />
+                <div className="loginbox">
+                    <img src="https://res.cloudinary.com/dbhwvh1mf/image/upload/v1567570643/img/avatar_ynz0bv.png" className="avatar" />
                     <h1>Login Here</h1>
                     <form>
                         <p>Email</p>

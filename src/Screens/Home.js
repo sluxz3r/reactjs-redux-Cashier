@@ -14,46 +14,61 @@ import { getProduct } from '../Redux/Actions/Product';
 class Home extends Component {
     state = {
         sumCart: 0,
-        isLoading:false,
-        product:[]
+        isLoading: false,
+        product: [],
+        cart: [],
+        total: [],
+        jumlah: []
     }
 
 
-    componentDidMount=async()=>{
-        this.setState({ isLoading:true })
+    componentDidMount = async () => {
+        this.setState({ isLoading: true })
         await this.props.dispatch(getProduct());
         this.setState({
             product: this.props.product.productList,
-            isLoading:false
+            isLoading: false
         });
     }
-    _sumCart = () => {
+
+    _sumCart = (val) => {
+        this.state.cart.push({
+            image: val.image,
+            name: val.name,
+            price: val.price,
+            qty: 1,
+        })
+        this.state.total.push(val.price)
+
         this.setState({
-            sumCart: this.state.sumCart + 1
+            cart: this.state.cart,
+            sumCart: this.state.sumCart + 1,
         })
     }
 
-    _cancel=()=>{
+    _cancel = () => {
         this.setState({
-            sumCart:0
+            sumCart: 0,
+            cart: [],
+            total: []
         })
     }
     render() {
-        console.log(this.state.product);
-        
+        const total = this.state.total
+        const sum = total.reduce((total, value) => total + value, 0)
         return (
             <>
-             {localStorage.jwtToken == undefined ? <Redirect to='/login' /> :
-            <div class='container'>
-                <Header cart={this.state.sumCart} />
-                <div class='content'>
-                    <LeftBar />
-                    {this.state.isLoading == true ? 
-                    <Loading /> :
-                    <Item sumCart={this._sumCart} item={this.state.product} />}
-                    <ListItem cart={this.state.sumCart} cancel={this._cancel}/>
-                </div>
-            </div>}
+                {localStorage.jwtToken == undefined ? <Redirect to='/login' /> :
+                    <div className='container'>
+                        <Header cart={this.state.sumCart} />
+                        <div className='content'>
+                            <LeftBar />
+                            {this.state.isLoading == true ?
+                                <Loading /> :
+                                <Item sumCart={this._sumCart} item={this.state.product} />}
+                                <ListItem cart={this.state.cart} cancel={this._cancel} sum={sum}/>
+                        </div>
+                    </div>}
             </>
         );
     }

@@ -1,0 +1,57 @@
+.modalAdd{
+    height: 300px;
+    width: 400px;
+
+}
+
+.kepalaModal p {
+    font-size: 18pt;
+    font-weight: 600;
+    margin-top: 0px
+}
+
+.formModal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    height: 35px;
+}
+
+.formModal label {
+    width: 30%;
+    font-weight: 500
+}
+
+.formModal input{
+    height: 25px;
+    border-radius: 2px;
+    width: 60%;
+    padding-left: 5px
+}
+.but{
+    padding-left: 210px;
+    margin-top: 30px
+}
+.buttonCancel{
+    color: white;
+    background-color: #F24F8A;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 90px;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 12pt
+}
+
+.buttonAdd{
+    color: white;
+    background-color: #57CAD5;;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 90px;
+    font-weight: 700;
+    font-size: 12pt
+}

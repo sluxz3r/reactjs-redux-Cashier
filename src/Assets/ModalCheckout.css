@@ -1,0 +1,76 @@
+
+.modalCheck{
+	height: 400px;
+	width: 400px;
+}
+
+.isiKepala{
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	margin-left: 10px;
+	margin-right: 10px;
+    height: 35px;
+}
+.cekcek{
+	font-size: 16pt;
+	font-weight: 600;
+	width: 30%
+}
+
+.cashier{
+	margin-left: 10px;
+	margin-top: 0;
+}
+
+.textCasier{
+	margin: 0
+}
+.receipt{
+	width: 70%;
+	text-align: right;
+	font-weight: 500;
+}
+
+
+.kepalaModal p {
+    font-size: 18pt;
+    font-weight: 600;
+    margin-top: 0px
+}
+
+.badanModal{
+	height: 60%;
+	background-color: red
+}
+.badanModal p {
+    margin-top: 10px
+}
+
+.buts{
+    margin-top: 30px;
+    margin-left: 60px
+}
+.buttonCancels{
+    color: white;
+    background-color: #F24F8A;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 120px;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 12pt
+}
+
+.buttonAdds{
+    color: white;
+    background-color: #57CAD5;;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 120px;
+    font-weight: 700;
+    font-size: 12pt;
+    margin-left: 10px
+}

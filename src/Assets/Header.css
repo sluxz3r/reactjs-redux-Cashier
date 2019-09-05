@@ -8,6 +8,10 @@
     width: 5%;
     border-right: 1px solid rgb(165, 165, 165)
 }
+.sum{
+    background-color:#57CAD5;
+    border-radius: 50px
+}
 
 .iconBurger{
     width: 90%

@@ -9,3 +9,10 @@ export const getProduct = () => {
 
     }
 };
+
+export const postProduct = (data) => {
+    return {
+        type: 'POST_PRODUCT',
+        payload: axios.post(`${url}/product`, data)
+    }
+};

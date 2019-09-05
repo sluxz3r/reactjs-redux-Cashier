@@ -1,5 +1,3 @@
-.iconItem{
-}
 .textItem{
     margin: -30
 }
@@ -7,8 +5,127 @@
     color: #CECECE;
     font-size: 10pt
 }
-
-
 .cartItem{
-    width: 30%
+    width: 100%
+}
+.checkout{
+    width: 100%;
+}
+.listCheck{
+    display: flex;
+    padding: 20px;
+}
+.imgCheck{
+    width: 15%;
+    height: 60px;
+    background-color: red
+}
+.img{
+    height: 100%;
+}
+.nameQty{
+    width: 55%;
+    height: 60px;
+    background-color:white;
+    padding-left: 15px;
+    font-weight: 600
+}
+.price{
+    width: 30%;
+    height: 60px;
+}
+.harga{
+    font-weight: 700;
+    font-size: 16pt;
+    margin-top: 30px
+}
+.textQty{
+    margin-top: 0px;
+    margin-bottom: -7px
+}
+
+.listAll{
+    height: 100px;
+}
+
+.input-jumlah{
+    background-color: white;
+    font-weight: bold;
+    display: flex;
+}
+.inpud {
+    background-color:white;
+    text-align: center;
+    color: #82DE3A;
+    width: 30px;
+    height: 25px;
+    font-weight: bold;
+    font-size: 12pt;
+    outline: inherit;
+    border-top: 2px solid#82DE3A;
+    border-bottom: 2px solid#82DE3A
+}
+.myButton{
+    background-color: rgba(130, 222, 58, 0.2);
+    text-align: center;
+    color: #82DE3A;
+    width: 30px;
+    height: 25px;
+    font-weight: bold;
+    font-size: 12pt;
+    outline: inherit;
+    border: none;
+    border: 2px solid#82DE3A
+}
+
+.menuBawah{
+    position: 'fixed';
+    margin: 0px
+}
+
+.total{
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px
+}
+
+.textTotal{
+    width: 50%;
+    margin: 0px
+}
+
+.textHarga{
+    width: 50%;
+    text-align: right;
+    margin: 0px;
+    font-weight: 700;
+    font-size: 16pt;
+}
+
+.ppn{
+    padding-left: 10px;
+    margin-bottom: 40px
+}
+
+.checkButton{
+    margin-left:10%;
+    width: 80%;
+    height: 50px;
+    background-color: #57CAD5;
+    cursor: pointer;
+}
+
+.cancel{
+    margin-left:10%;
+    width: 80%;
+    height: 50px;
+    background-color: #F24F8A;
+    cursor: pointer;
+}
+.textCancel{
+    text-align: center;
+    padding: 5%;
+    font-weight: bold;
+    color: white
 }

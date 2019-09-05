@@ -4,8 +4,8 @@ import '../Assets/Loading.css'
 class Loading extends Component {
     render() {
         return (
-            <div class='menuLoading'>
-                <div class="loading"/>
+            <div className='menuLoading'>
+                <div className="loading"/>
             </div>
         );
     }

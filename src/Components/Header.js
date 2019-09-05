@@ -15,7 +15,7 @@ class Header extends Component {
                 </div>
 
                 <div class='cart'>
-                    <p class='textCart'>Cart {this.props.cart}</p>
+                    <p class='textCart'>Cart <span class='sum'> {this.props.cart}</span></p>
                 </div>
             </div>
         );
