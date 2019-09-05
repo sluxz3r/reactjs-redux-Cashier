@@ -30,14 +30,18 @@ class Home extends Component {
         });
     }
 
-    _sumCart = (val) => {
+    _sumCart = (index, val) => {
         this.state.cart.push({
             image: val.image,
             name: val.name,
             price: val.price,
             qty: 1,
         })
-        this.state.total.push(val.price)
+        // this.setState({
+        //     total:val.price
+        // })
+        this.state.total = Number(this.state.total + val.price)
+        // this.state.total.push(val.price)
         this.state.idProd.push({
             id_product: val.id_product,
             name: val.name,
@@ -63,7 +67,8 @@ class Home extends Component {
     _plus = (index) => {
         this.state.cart[index].qty++
         this.state.idProd[index].qty++
-        this.state.total.push(this.state.cart[index].price)
+        this.state.total = Number(this.state.total + this.state.cart[index].price)
+        // this.state.total.push(this.state.cart[index].price)
         this.setState({
             cart: this.state.cart
         })
@@ -75,7 +80,7 @@ class Home extends Component {
         ) {
             this.state.cart[index].qty--
             this.state.idProd[index].qty--
-            this.state.total.splice([index],1)
+            this.state.total = Number(this.state.total - this.state.cart[index].price)
             this.setState({
                 cart: this.state.cart
             })
@@ -83,9 +88,10 @@ class Home extends Component {
     }
     render() {
         console.log(this.state.total);
+        console.log(this.state.idProd);
         
-        const total = this.state.total
-        const sum = total.reduce((total, value) => total + value, 0)
+        const sum = this.state.total
+        // const sum = total.reduce((total, value) => total + value, 0)
         return (
             <>
                 {localStorage.jwtToken == undefined ? <Redirect to='/login' /> :

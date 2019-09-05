@@ -111,7 +111,7 @@ class ModalCheckout extends Component {
                                         <div className='tootal' key={index}>
                                             <p className='nameTot'>{data.name}</p>
                                             <p className='qtyTot'>{data.qty}x</p>
-                                            <p className='priceTot'>Rp.{data.price}</p>
+                                            <p className='priceTot'>@ Rp.{data.price}</p>
                                         </div>
                                     )
                                 })}

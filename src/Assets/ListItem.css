@@ -24,20 +24,21 @@
     height: 100%;
 }
 .nameQty{
-    width: 55%;
+    width: 50%;
     height: 60px;
     background-color:white;
     padding-left: 15px;
     font-weight: 600
 }
 .price{
-    width: 30%;
+    width: 50%;
     height: 60px;
 }
 .harga{
-    font-weight: 700;
-    font-size: 16pt;
-    margin-top: 30px
+    font-weight: 500;
+    font-size: 14pt;
+    margin-top: 30px;
+    text-align: right
 }
 .textQty{
     margin-top: 0px;

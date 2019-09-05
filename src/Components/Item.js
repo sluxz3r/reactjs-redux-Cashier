@@ -14,7 +14,7 @@ class Login extends Component {
                         menu.length > 0 &&
                         menu.map((data, index) => {
                             return (
-                                <div key={index} className='card' onClick={(val) => this.props.sumCart(data)}>
+                                <div key={index} className='card' onClick={(val) => this.props.sumCart(index, data)}>
                                     <img className='foto' src={data.image} />
                                     <p className='nameKopi'>{data.name}</p>
                                     <p className='hargaKopi'>Rp.{data.price}</p>

@@ -38,7 +38,7 @@ class Login extends Component {
                                                         <p style={{margin:'0'}}>{items.name} {items.qty}X</p>
                                                     </div>
                                                     <div style={{width:'45%'}}>
-                                                        <p style={{ textAlign: 'right', margin:'0' }}>Rp.{items.price}</p></div>
+                                                        <p style={{ textAlign: 'right', margin:'0' }}>@ Rp.{items.price}</p></div>
                                                 </div>)}
                                         </td>
                                         <td style={{ textAlign: 'center' }}>Rp.{item.total}</td>

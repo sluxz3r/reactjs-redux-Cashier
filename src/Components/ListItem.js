@@ -39,7 +39,7 @@ class ListItem extends Component {
                                                 </span>
                                             </div>
                                             <div className='price'>
-                                                <p className='harga'>Rp.{data.price}</p>
+                                                <p className='harga'>@ Rp.{data.price}</p>
                                             </div>
                                         </div>)
                                 })}
