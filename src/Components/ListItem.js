@@ -8,14 +8,6 @@ class ListItem extends Component {
         total: null,
     }
 
-    _plus = () => {
-        this.setState({
-            cartItem: this.state.cartItem.qty + 1
-        })
-    }
-
-
-
     render() {
         const item = this.props.cart;
         return (
@@ -34,20 +26,20 @@ class ListItem extends Component {
                                 item.length > 0 &&
                                 item.map((data, index) => {
                                     return (
-                                        <div className='listCheck'>
+                                        <div key={index} className='listCheck'>
                                             <div className='imgCheck'>
                                                 <img className='img' src={data.image} />
                                             </div>
                                             <div className='nameQty'>
                                                 <p className='textQty'>{data.name}</p>
                                                 <span className="input-jumlah">
-                                                    <p className="myButton" >-</p>
+                                                    <p className="myButton" onClick={(val) => this.props.minus(index)}  >-</p>
                                                     <p className="inpud" >{data.qty}</p>
-                                                    <p className="myButton" onClick={this._plus} >+</p>
+                                                    <p className="myButton" onClick={(val) => this.props.plus(index)} >+</p>
                                                 </span>
                                             </div>
                                             <div className='price'>
-                                                <p className='harga'>Rp.{data.price * data.qty}</p>
+                                                <p className='harga'>Rp.{data.price}</p>
                                             </div>
                                         </div>)
                                 })}

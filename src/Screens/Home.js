@@ -59,7 +59,31 @@ class Home extends Component {
             idProd: [],
         })
     }
+
+    _plus = (index) => {
+        this.state.cart[index].qty++
+        this.state.idProd[index].qty++
+        this.state.total.push(this.state.cart[index].price)
+        this.setState({
+            cart: this.state.cart
+        })
+    }
+
+    _minus = (index) => {
+        if (
+            !(this.state.cart[index].qty <= 1)
+        ) {
+            this.state.cart[index].qty--
+            this.state.idProd[index].qty--
+            this.state.total.splice([index],1)
+            this.setState({
+                cart: this.state.cart
+            })
+        }
+    }
     render() {
+        console.log(this.state.total);
+        
         const total = this.state.total
         const sum = total.reduce((total, value) => total + value, 0)
         return (
@@ -72,7 +96,7 @@ class Home extends Component {
                             {this.state.isLoading == true ?
                                 <Loading /> :
                                 <Item sumCart={this._sumCart} item={this.state.product} cart={this.state.cart} />}
-                            <ListItem cart={this.state.cart} cancel={this._cancel} sum={sum} idProd={this.state.idProd} />
+                            <ListItem cart={this.state.cart} plus={this._plus} minus={this._minus} cancel={this._cancel} sum={sum} idProd={this.state.idProd} />
                         </div>
                     </div>}
             </>
