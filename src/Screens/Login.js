@@ -73,7 +73,7 @@ class Login extends Component {
                         name="password" 
                         placeholder="Enter Password"
                         onChange={(e) => this.setState({ password: e.target.value })} />
-                        <input type="submit" name="" value="Login"onClick={userAdd.bind(this)}/>
+                        <button onClick={userAdd.bind(this)}>Sign In</button>
                     </form>
                 </div>}
             </div>
