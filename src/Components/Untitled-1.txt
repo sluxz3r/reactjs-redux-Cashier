@@ -3,10 +3,8 @@ import swal from 'sweetalert';
 import '../Assets/ModalCheckout.css';
 import { connect } from 'react-redux';
 import { postTransaksi } from '../Redux/Actions/Transaksi';
-import { postEmail } from '../Redux/Actions/Send';
 import moment from 'moment'
 import Modal from 'react-modal';
-
 const customStyles = {
     content: {
         top: '50%',
@@ -25,9 +23,7 @@ class ModalCheckout extends Component {
         this.state = {
             modalIsOpen: false,
             Transaksi: [],
-            receipt: moment().valueOf(),
-            isEmail: false,
-            email: '',
+            receipt: moment().valueOf()
         };
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -37,53 +33,46 @@ class ModalCheckout extends Component {
         this.setState({ modalIsOpen: true });
     }
 
-    closeModal = () => {
-        this.add()
-        window.print()
-        this.setState({ modalIsOpen: false })
-        window.location.href = '/'
+    closeModal() {
+        this.setState({ modalIsOpen: false });
     }
-    postTran = () => {
-        this.add()
-        this.setState((prevState) => ({
-            modal: !prevState.modal
-        }));
-    };
-
-    add = async () => {
-        const data = {
-            id_transaksi: this.state.receipt,
-            id_cashier: 12,
-            total: this.props.total.toString(),
-            idProd: JSON.stringify(this.props.idProd)
-        }
-        await this.props.dispatch(postTransaksi(data))
-        this.setState({
-            isEmail: true
-        })
-    };
 
 
-    send = async () => {
-        // const all = {
-        //    this.props.total,
-        //     this.props.idProd
-        // }
-        const sendmail = {
-            email: this.state.email,
-            text: JSON.stringify([this.props.total,this.props.idProd])
-        }
-        await this.props.dispatch(postEmail(sendmail))
-        window.location.href = '/'
-    }
     render() {
+        const postTran = () => {
+            add()
+            this.setState((prevState) => ({
+                modal: !prevState.modal
+            }));
+        };
+        let add = async () => {
+            const data = {
+                id_transaksi: this.state.receipt,
+                id_cashier: 12,
+                total: this.props.total.toString(),
+                idProd:JSON.stringify(this.props.idProd)
+            }
+            await this.props.dispatch(postTransaksi(data))
+                .then(() => {
+                    swal({
+                        title: "Login",
+                        text: `Login Success`,
+                        icon: "success",
+                        button: "OK"
+                    }).then(() => {
+                        window.location.href = '/';
+                    })
+                })
+        };
 
         const name = localStorage.getItem('name')
         const ppn = this.props.total * 0.1
         const total = this.props.total + ppn
         const item = this.props.item
-        console.log(this.props.idProd)
+        console.log(JSON.stringify(item));
+
         return (
+
             <div>
                 <p class='textCancel' onClick={this.openModal}>Checkout</p>
                 <Modal
@@ -121,24 +110,12 @@ class ModalCheckout extends Component {
                             <p className='ppn'>Ppn 10% </p>
                             <p className='ppnRight'>Rp.{ppn}</p>
                         </div>
-                        <p style={{ textAlign: 'right', marginTop: '0px', marginRight: '20px', fontWeight: 'bold' }}>Total : Rp.{total}</p>
-                        {this.state.isEmail == true ?
-                            <form className='send'>
-                                <label className='labelSend'>Email</label>
-                                <input
-                                    className='inputSend'
-                                    type="text"
-                                    name="title"
-                                    id="title"
-                                    placeholder="Email..."
-                                    onChange={(e) => this.setState({ email: e.target.value })} />
-                                <button className='buttonSend' onClick={this.send}>Send</button>
-                            </form> :
-                            <div className='buts'>
-                                <button className='buttonCancels' onClick={this.closeModal} >Print</button>
-                                <label>or</label>
-                                <button type='submit' class="buttonAdds" onClick={this.postTran}>Send Email</button>
-                            </div>}
+                        <p style={{ textAlign: 'right', marginTop:'0px', marginRight:'20px', fontWeight:'bold' }}>Total : Rp.{total}</p>
+                        <div className='buts'>
+                            <button className='buttonCancels' onClick={this.closeModal} >Print</button>
+                            <label>or</label>
+                            <button type='submit' class="buttonAdds" onClick={postTran.bind(this)}>Send Email</button>
+                        </div>
                     </div>
                 </Modal>
             </div>
@@ -147,8 +124,7 @@ class ModalCheckout extends Component {
 }
 const mapStateToProps = state => {
     return {
-        transaksi: state.transaksi,
-        send: state.send
+        transaksi: state.transaksi
     };
 };
 export default connect(mapStateToProps)(ModalCheckout);

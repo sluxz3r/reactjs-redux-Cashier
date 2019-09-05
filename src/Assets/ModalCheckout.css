@@ -40,15 +40,15 @@
 }
 
 .badanModal{
-	height: 60%;
-	background-color: red
+    height: 50%;
+    overflow-y: auto;
 }
 .badanModal p {
     margin-top: 10px
 }
 
 .buts{
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 60px
 }
 .buttonCancels{
@@ -70,6 +70,73 @@
     border-radius: 10px;
     height: 40px;
     width: 120px;
+    font-weight: 700;
+    font-size: 12pt;
+    margin-left: 10px
+}
+
+.tootal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nameTot{
+    width: 25%;
+    font-weight: 700;
+}
+.qtyTot{
+    width: 25%;
+    font-weight: 700;
+}
+.priceTot{
+    width: 50%;
+    text-align: right;
+    font-weight: 700;
+}
+.tootals{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    height: 60px;
+}
+.ppn{
+    width: 40%;
+    font-weight: 700;
+}
+.ppnRight{
+    width: 50%;
+    text-align: right;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.send{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.labelSend{
+margin-right: 20px;
+font-weight: 700
+}
+.inputSend{
+    margin-right: 20px;
+    height: 30px;
+    width: 180px;
+    padding-left: 10px
+}
+.buttonSend{
+    color: white;
+    background-color: #57CAD5;;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 80px;
     font-weight: 700;
     font-size: 12pt;
     margin-left: 10px

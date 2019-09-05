@@ -4,6 +4,9 @@ import '../Assets/Item.css';
 class Login extends Component {
     render() {
         const menu = this.props.item;
+        const cart = this.props.cart;
+        console.log('cart', cart);
+        
         return (
             <div className='menuItem'>
                 <div className='cardContainer'>

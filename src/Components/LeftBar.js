@@ -9,6 +9,7 @@ class LeftBar extends Component {
             const userid = localStorage.userid
             localStorage.removeItem('userid')
             localStorage.removeItem('jwtToken')
+            localStorage.removeItem('name')
             swal({
                 title: "Logout",
                 text: "Logout Success !!",

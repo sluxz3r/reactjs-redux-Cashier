@@ -46,8 +46,7 @@ padding-top: 40px
     padding: 20px;
 
 }
-.iconItem{
-}
+
 .textItem{
     margin: -30
 }
@@ -57,7 +56,8 @@ padding-top: 40px
 }
 .menuItems{
     width: 95%;
-    background-color: rgb(236, 236, 236)
+    background-color: rgb(236, 236, 236);
+    padding-top: 20px
 }
 
 .cartItem{

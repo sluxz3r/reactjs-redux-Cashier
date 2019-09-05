@@ -12,8 +12,10 @@ export const login = (data) => {
         }).then( res => {
             const token = res.data.result.token;
             const userid = res.data.result.userid;
+            const fullname = res.data.result.fullname;
             localStorage.setItem('jwtToken', token);
             localStorage.setItem('userid', userid);
+            localStorage.setItem('name', fullname);
         })
     }
 

@@ -5,7 +5,7 @@ import ModalCheckout from '../Components/ModalCheckout';
 class ListItem extends Component {
     state = {
         cartItem: this.props.cart,
-        total: null
+        total: null,
     }
 
     _plus = () => {
@@ -20,7 +20,7 @@ class ListItem extends Component {
         const item = this.props.cart;
         return (
             <div style={{ height: '80%', width: '30%' }}>
-                <div style={{ height: '80%', width: '100%', overflowY: 'scroll' }}>
+                <div style={{ height: '80%', width: '100%', overflowY: 'auto' }}>
                     {this.props.cart == 0 ?
                         <div className='checkout'>
                             <div className='textCart'>
@@ -63,7 +63,7 @@ class ListItem extends Component {
                             <span>*Belum termasuk ppn</span>
                         </div>
                         <div className='checkButton'>
-                            <ModalCheckout />
+                            <ModalCheckout total={this.props.sum} item={this.props.cart} idProd={this.props.idProd} />
                         </div>
                         <div onClick={this.props.cancel} className='cancel'>
                             <p className='textCancel'>Cancel</p>

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Header from '../Components/Header';
 import LeftBar from '../Components/LeftBar';
 import ListItem from '../Components/ListItem';
 import Item from '../Components/Item';
 import Loading from '../Components/Loading';
-import swal from 'sweetalert';
 import '../Assets/Home.css';
 
 import { connect } from 'react-redux';
@@ -18,7 +17,7 @@ class Home extends Component {
         product: [],
         cart: [],
         total: [],
-        jumlah: []
+        idProd: [],
     }
 
 
@@ -39,6 +38,12 @@ class Home extends Component {
             qty: 1,
         })
         this.state.total.push(val.price)
+        this.state.idProd.push({
+            id_product: val.id_product,
+            name: val.name,
+            price: val.price,
+            qty: 1
+        })
 
         this.setState({
             cart: this.state.cart,
@@ -50,7 +55,8 @@ class Home extends Component {
         this.setState({
             sumCart: 0,
             cart: [],
-            total: []
+            total: [],
+            idProd: [],
         })
     }
     render() {
@@ -65,8 +71,8 @@ class Home extends Component {
                             <LeftBar />
                             {this.state.isLoading == true ?
                                 <Loading /> :
-                                <Item sumCart={this._sumCart} item={this.state.product} />}
-                                <ListItem cart={this.state.cart} cancel={this._cancel} sum={sum}/>
+                                <Item sumCart={this._sumCart} item={this.state.product} cart={this.state.cart} />}
+                            <ListItem cart={this.state.cart} cancel={this._cancel} sum={sum} idProd={this.state.idProd} />
                         </div>
                     </div>}
             </>
