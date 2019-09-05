@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8000';
+const url = 'https://cashier-ari.herokuapp.com';
+// const url = 'http://localhost:8000';
 
 export const postEmail = (data) => {
     return {

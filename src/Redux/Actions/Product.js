@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8000';
+// const url = 'http://localhost:8000';
+const url = 'https://cashier-ari.herokuapp.com';
 
 export const getProduct = () => {
     return {
@@ -13,6 +14,6 @@ export const getProduct = () => {
 export const postProduct = (data) => {
     return {
         type: 'POST_PRODUCT',
-        payload: axios.post(`${url}/product`, data)
+        payload: axios.post(`${url}/product/`, data)
     }
 };

@@ -33,26 +33,6 @@ class Login extends Component {
         };
         let add = async () => {
           await this.props.dispatch(login(this.state.user[0]))
-            .then(() => {
-              swal({
-                title: "Login",
-                text: `Login Success`,
-                icon: "success",
-                button: "OK"
-              }).then(() => {
-                window.location.href = '/';
-              })
-            })
-            .catch(() => {
-              swal({
-                title: "Login Failed",
-                text: "Email Or Password Wrong !!!",
-                icon: "warning",
-                buttons: "OK"
-              }).then(() => {
-                
-              })
-            })
         };
         return (
             <div className='bodyLogin'>
@@ -73,7 +53,9 @@ class Login extends Component {
                         name="password" 
                         placeholder="Enter Password"
                         onChange={(e) => this.setState({ password: e.target.value })} />
+                        <Link to='/'>
                         <button onClick={userAdd.bind(this)}>Sign In</button>
+                        </Link>
                     </form>
                 </div>}
             </div>

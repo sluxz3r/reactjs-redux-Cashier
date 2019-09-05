@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import HistoryList from '../Components/History';
 import HeaderHistory from '../Components/HeaderHistory'
 import LeftBar from '../Components/LeftBar';
-import swal from 'sweetalert';
+import Loading from '../Components/Loading';
 import '../Assets/History.css'
 import { connect } from 'react-redux';
 import { getTransaksi } from '../Redux/Actions/Transaksi';
@@ -31,7 +30,9 @@ class History extends Component {
                 <div className='content'>
                     <LeftBar />
                     <div className='menuItems'>
-                        <HistoryList list={list} />
+                    {this.state.isLoading == true ?
+                                <Loading /> :
+                        <HistoryList list={list} />}
                     </div>
                 </div>
             </div>
