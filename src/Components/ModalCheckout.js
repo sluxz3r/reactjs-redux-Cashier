@@ -71,7 +71,7 @@ class ModalCheckout extends Component {
         // }
         const sendmail = {
             email: this.state.email,
-            text: JSON.stringify([this.props.total,this.props.idProd])
+            text: JSON.stringify(this.props.idProd)
         }
         await this.props.dispatch(postEmail(sendmail))
         window.location.href = '/'
